@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rithwik Nayak — Portfolio</title>
+  <style>
+    :root{
+      --accent:#4f46e5;
+      --muted:#6b7280;
+      --bg:#f8fafc;
+      --card:#ffffff;
+      --radius:14px;
+      --gap:22px;
+      --header-h:68px;
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:#111;line-height:1.6}
+
+    header{
+      position:fixed;top:0;left:0;right:0;height:var(--header-h);background:rgba(255,255,255,0.85);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:space-between;padding:0 28px;border-bottom:1px solid rgba(0,0,0,0.06);z-index:100;
+    }
+    header .logo{font-weight:800;font-size:20px;color:var(--accent)}
+    header nav{display:flex;gap:18px}
+    header nav a{text-decoration:none;color:var(--muted);font-weight:600;padding:6px 10px;border-radius:8px;transition:all .15s}
+    header nav a:hover{color:var(--accent);background:rgba(79,70,229,0.05)}
+
+    main{padding-top:calc(var(--header-h) + 40px);max-width:1100px;margin:auto;padding-left:20px;padding-right:20px}
+
+    section{margin-bottom:60px}
+    h1.page-title{font-size:24px;font-weight:700;margin-bottom:20px;color:#111}
+    h1.page-title small{font-size:14px;color:var(--muted)}
+
+    /* Home */
+    .intro{display:grid;grid-template-columns:1.6fr 1fr;gap:var(--gap);align-items:center}
+    .intro .text{padding:28px;background:white;border-radius:var(--radius);box-shadow:0 10px 20px rgba(0,0,0,0.04)}
+    .intro .text h2{margin-bottom:14px;font-size:26px;color:var(--accent)}
+    .intro .text p{margin-bottom:12px;color:#333}
+    .btn{display:inline-block;margin-top:12px;padding:10px 18px;border:2px solid var(--accent);border-radius:10px;color:var(--accent);font-weight:700;text-decoration:none;transition:.2s}
+    .btn:hover{background:var(--accent);color:#fff;transform:translateY(-3px)}
+
+    .intro .visual{text-align:center}
+    .intro .visual img{width:90%;border-radius:50%;max-width:320px;border:6px solid rgba(79,70,229,0.1)}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap)}
+    .about .story{background:white;padding:22px;border-radius:var(--radius);box-shadow:0 6px 16px rgba(0,0,0,0.04)}
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .skill-tile{background:var(--card);padding:14px;border-radius:8px;text-align:center;font-weight:600;border:1px solid rgba(0,0,0,0.05)}
+
+    /* Projects */
+    .projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+    .project-card{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.04);transition:all .2s}
+    .project-card:hover{transform:translateY(-6px);box-shadow:0 14px 24px rgba(0,0,0,0.08)}
+    .project-card h3{color:var(--accent);margin-bottom:6px}
+    .project-card a{text-decoration:none;color:var(--accent);font-weight:700}
+
+    /* Achievements */
+    .achievements-stack{display:flex;flex-direction:column;gap:26px}
+    .ach-card{position:relative;padding:18px 18px 18px 26px;background:white;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.03)}
+    .ach-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent);border-radius:10px 0 0 10px}
+
+    /* Contact */
+    .contact form{max-width:540px;margin:auto;background:white;padding:26px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.05)}
+    .form-group{display:flex;flex-direction:column;margin-bottom:14px}
+    label{font-size:14px;color:var(--muted);margin-bottom:4px}
+    input,textarea{padding:10px;border:1px solid rgba(0,0,0,0.08);border-radius:8px;font-size:15px}
+    textarea{resize:vertical;min-height:120px}
+    .submit{background:var(--accent);color:#fff;border:none;padding:10px 16px;border-radius:8px;font-weight:700;cursor:pointer}
+    .submit:hover{filter:brightness(.95)}
+    .social-block{margin-top:16px;display:flex;gap:12px;justify-content:center;border-top:1px solid rgba(0,0,0,0.05);padding-top:12px}
+    .social-block a{text-decoration:none;color:var(--accent);font-weight:600}
+
+    @media(max-width:800px){
+      .intro{grid-template-columns:1fr}
+      .about{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Rithwik Nayak</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h1 class="page-title">Home Page <small>“The Explorer's Base”</small></h1>
+      <div class="intro">
+        <div class="text">
+          <h2>Hey, I'm Rithwik Nayak.</h2>
+          <p>A web developer who loves simple, clean interfaces that just make sense. I build experiences that are smooth to use and easy to look at.</p>
+          <a href="#projects" class="btn">Explore My Work</a>
+        </div>
+        <div class="visual">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Anonymous profile image" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h1 class="page-title">About Page <small>“The Story Behind You”</small></h1>
+      <div class="about">
+        <div class="story">
+          <p>I enjoy learning through creation. Each new design or project teaches me something different about how people think and interact. My layouts balance function and form while leaving room for curiosity.</p>
+          <div class="skills-grid">
+            <div class="skill-tile">HTML</div>
+            <div class="skill-tile">CSS</div>
+            <div class="skill-tile">JavaScript</div>
+            <div class="skill-tile">React</div>
+            <div class="skill-tile">UI Design</div>
+            <div class="skill-tile">Figma</div>
+          </div>
+        </div>
+        <div class="story">
+          <p>Outside the editor, I’m probably sketching, gaming, or reading about new tech. Keeping balance between screens and real life helps the ideas stay fresh.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h1 class="page-title">Projects Page <small>“The Lab of Creations”</small></h1>
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Project Alpha</h3>
+          <p>A portfolio framework designed from scratch — minimal, clean, and responsive.</p>
+          <a href="#">See More →</a>
+        </div>
+        <div class="project-card">
+          <h3>Project Beta</h3>
+          <p>Interactive dashboard visualizing data in a user-friendly way.</p>
+          <a href="#">See More →</a>
+        </div>
+        <div class="project-card">
+          <h3>Project Gamma</h3>
+          <p>Built a small web game that blends animation and sound effects for engagement.</p>
+          <a href="#">See More →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <h1 class="page-title">Achievements Page <small>“Milestones Gallery”</small></h1>
+      <div class="achievements-stack">
+        <div class="ach-card">
+          <h4>Hackathon Winner</h4>
+          <p>Led a small team to design a real-time collaborative note-taking app that won a campus hackathon.</p>
+        </div>
+        <div class="ach-card">
+          <h4>UI Design Recognition</h4>
+          <p>Got featured on a student design showcase for innovative interface design.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h1 class="page-title">Contact Page <small>“Connect with Me”</small></h1>
+      <form onsubmit="event.preventDefault();alert('Form demo only.');">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" required></textarea>
+        </div>
+        <button type="submit" class="submit">Submit</button>
+        <div class="social-block">
+          <a href="#">Twitter</a>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
